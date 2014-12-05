@@ -1,0 +1,42 @@
+<html>
+<head>
+<!-- inject:css -->
+<!-- endinject -->
+<script>
+
+function outSideClick( ele )
+{
+  var event = new CustomEvent("clicky", {
+    detail: {
+      message: 'hello',
+      time: new Date(),
+    },
+    bubbles: true,
+    cancelable: true
+  });
+  ele.dispatchEvent(event);
+
+}
+</script>
+
+
+</head>
+<body>
+<div id="content">
+
+
+</div>
+<div id="test">
+<button onClick="outSideClick(this)">Outside Click</button>
+</div>
+<div id ="datagrid">
+
+</div>
+
+<!-- inject:head:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- endinject -->
+</body>
+</html>
